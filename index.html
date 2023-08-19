@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Web Page</title>
+    <title>Your Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,20 +15,54 @@
             text-align: center;
             padding: 1em;
         }
+        nav {
+            background-color: #35424a;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: auto;
             padding: 2em;
         }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2em;
+        }
+        .feature img {
+            max-width: 50px;
+            margin-right: 1em;
+        }
+        .feature p {
+            flex: 1;
+        }
+        /* Add more CSS styles for other elements */
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Web Page</h1>
+        <h1>Your Website</h1>
     </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
     <div class="container">
-        <h2>About Me</h2>
-        <p>Hello! I'm excited to share information about myself on this webpage.</p>
+        <h2>Welcome to Your Website</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="feature">
+            <img src="icon1.png" alt="Feature Icon">
+            <p>Feature 1: Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="feature">
+            <img src="icon2.png" alt="Feature Icon">
+            <p>Feature 2: Sed do eiusmod tempor incididunt.</p>
+        </div>
+        <!-- Add more features and content here -->
     </div>
 </body>
 </html>
