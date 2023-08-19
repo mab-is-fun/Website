@@ -1,79 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Manipulation App</title>
+    <title>Your Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #35424a;
+            color: white;
             text-align: center;
-            background-color: #f5f5f5;
+            padding: 1em;
         }
-        h1 {
-            color: #333;
+        nav {
+            background-color: #35424a;
+            color: white;
+            text-align: center;
+            padding: 1em;
         }
-        #uploadedImage {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2em;
         }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2em;
+        }
+        .feature img {
+            max-width: 50px;
+            margin-right: 1em;
+        }
+        .feature p {
+            flex: 1;
+        }
+        /* Add more CSS styles for other elements */
     </style>
 </head>
 <body>
-    <h1>Image Manipulation App</h1>
-    <input type="file" id="imageInput">
-    <button onclick="applyFilter('grayscale')">Apply Grayscale</button>
-    <img id="uploadedImage" src="" alt="Uploaded Image">
-    <script>
-        const imageInput = document.getElementById('imageInput');
-        const uploadedImage = document.getElementById('uploadedImage');
-
-        imageInput.addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                uploadedImage.src = e.target.result;
-            };
-
-            if (file) {
-                reader.readAsDataURL(file);
-            }
-        });
-
-        function applyFilter(filterType) {
-            const img = new Image();
-            img.src = uploadedImage.src;
-
-            img.onload = function() {
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                canvas.width = img.width;
-                canvas.height = img.height;
-
-                // Apply selected filter
-                if (filterType === 'grayscale') {
-                    applyGrayscale(context, img);
-                }
-
-                uploadedImage.src = canvas.toDataURL();
-            };
-        }
-
-        function applyGrayscale(context, img) {
-            context.drawImage(img, 0, 0);
-            const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-            const data = imageData.data;
-
-            for (let i = 0; i < data.length; i += 4) {
-                const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
-                data[i] = avg;
-                data[i + 1] = avg;
-                data[i + 2] = avg;
-            }
-
-            context.putImageData(imageData, 0, 0);
-        }
-    </script>
+    <header>
+        <h1>Your Website</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <h2>Welcome to Your Website</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="feature">
+            <img src="icon1.png" alt="Feature Icon">
+            <p>Feature 1: Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="feature">
+            <img src="icon2.png" alt="Feature Icon">
+            <p>Feature 2: Sed do eiusmod tempor incididunt.</p>
+        </div>
+        <!-- Add more features and content here -->
+    </div>
 </body>
 </html>
